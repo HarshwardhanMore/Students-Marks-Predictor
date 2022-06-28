@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    
+    <a href="https://docs.google.com/spreadsheets/d/1UBTXWl_pba5GLtK5gWTKgZEwxfoG6gJ8zaWFfD4_k9E/edit?usp=sharing" target="_blank">Checkout Dataset</a>
+
+    <h1 id="result" > Marks Predictor </h1>
+
+    <hr>
+
+    <form method="post" action="home">
+
+        {% csrf_token %}
+
+        <div class="inputgrp">
+            <label for="courses">Total Number of Subjects : </label>
+            <input type="text" id="courses" name="courses" required placeholder="XXX">
+        </div>
+
+        <div class="inputgrp">
+            <label for="time">Time utilize /day : </label>
+            <input type="text" id="time" name="time" required placeholder="YYY">
+        </div>
+
+        <button id="submit" type="submit">Predict My Score</button>
+        <br>
+        <!-- <button id="checkScore">Checkout Score</button> -->
+
+
+    </form>
+
+    <hr>
+
+    <h1 id="result2" > Marks -> {{marks}} </h1>
+
+
+    <script src="{% static 'script.js' %}">
+
+
+
+    </script>
+
+</body>
+</html>
